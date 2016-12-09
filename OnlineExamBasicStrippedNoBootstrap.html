@@ -1,0 +1,104 @@
+<html>
+    <head>
+
+        <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase.js"></script>
+      
+        <style>
+            
+        </style>
+
+        
+        <script>
+             
+            var data;
+            var questData;
+            var studentData;
+            var questPos =1; // assuming there is a least one question in db:
+            
+        
+            // Initialize Firebase
+            const config = {
+				apiKey: "AIzaSyB-KjJEQvDTkgH41aqR78v2h8rgNpKYvmE",
+				authDomain: "eptest1-f09c8.firebaseapp.com",
+                databaseURL: "https://eptest1-f09c8.firebaseio.com",
+                storageBucket: "eptest1-f09c8.appspot.com",
+                messagingSenderId: "534461339800"
+			};
+            firebase.initializeApp(config);
+                             
+            // Get a reference to the database service
+            const database = firebase.database();
+            
+            
+            function displayQuestions(qData) {
+                var build = "";
+				var questionIndex;
+                var answer;
+                var ask;
+                var choiceA;
+                var choiceB;
+                var choiceC;
+                var choiceD;
+				var qpos;
+                
+                // Generate all the questions
+					build+=	'<div class="panel-heading text-center"> '; 
+                    build+= '   <h1>Online Exam</h1> ';
+                    build+= '</div> ';
+					
+                for ( var dictKey in qData ) {   
+
+					qpos = dictKey.substring(dictKey.length-1);
+					questionIndex = "Question "+ qpos;
+					answer      = questData[dictKey]["answer"];
+					ask         = questData[dictKey]["ask"];
+					choiceA     = "A) " + questData[dictKey]["choiceA"];
+					choiceB     = "B) " + questData[dictKey]["choiceB"];
+					choiceC     = "C) " + questData[dictKey]["choiceC"];
+					choiceD     = "D) " + questData[dictKey]["choiceD"];
+
+					build+= '<div> ';
+					//build+= '<div class="panel-body"> ';
+                    //build+= '    <div class="container"> ';
+                    build+= '    	 <h4 class="epquespos" ;text-decoration: bold"><i>'+questionIndex+'</i></h4> ';
+                    build+= '    	 <h4 class="epquest" style="padding-left: 2%;">'+ask+'</h4>';
+                    build+= '        <h4 style="text-decoration: underline">Answer choices:</h4> ';
+                    build+= '        <h4>'+choiceA+'</h4> ';
+                    build+= '        <h4>'+choiceB+'</h4> ';
+                    build+= '        <h4>'+choiceC+'</h4> ';
+                    build+= '        <h4'+choiceD+'</h4> ';
+					build+= '						<label for = "name">Answer';
+					build+= '						<input type = "text" class = "form-control" id = "name+'+qpos+'" placeholder = "Enter Name"> ';
+                    //build+= '    </div>  ';
+                    //build+= '</div> ';
+                    build+= '</div> ';
+                    
+				}
+				
+				// insert the generate html into document.
+				document.getElementById("epcentercol").innerHTML = build;
+                
+                
+            }
+  
+			
+            database.ref().on('value',function(snapshot){
+                       
+                    //var messageBoard = document.getElementById("messageBoard");
+                    var table = snapshot.val();
+                    
+                    questData = table["Questions"];
+                    studentData = table["Students"];
+                    displayQuestions(questData);
+                })
+                                
+        </script>
+    
+ </head>
+    <body>
+                <!--  Main questions-->
+
+                <div id="epcentercol"> 
+                </div>
+    </body>
+</html>

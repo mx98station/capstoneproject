@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quiz Creator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+    
+    
+    
+    <script>
+	        var config = {
+                apiKey: "AIzaSyBSN4XLbi-1LaM1WKb1PcoNXqhiNo_1YSk",
+                databaseURL: "https://database-742e3.firebaseio.com",
+            };
+            firebase.initializeApp(config);
+
+            // Get a reference to the database service
+           var database = firebase.database().ref('Questions');
+           var data;
+		   var count = 1;
+			function submit(){
+			    var question = $("#question").val();
+				console.log("Q"+count++);
+				var A = $("#choiceA").val();
+				var B = $("#choiceB").val();
+				var C = $("#choiceC").val();
+				var D = $("#choiceD").val();
+				var E = $("#choiceE").val();
+				var answer = $("#answer").val();
+				var time = new Date().getTime();
+				
+				// var time = Date().getTime();			
+		
+				
+				database.push({
+					"question":  question  ,
+				    "A":  A ,
+					"B":  B ,
+					"C":  C ,
+					"D":  D ,
+					"E":  E ,
+					"Timestamp":  time ,
+					"answer":  answer ,
+					
+					
+				});
+			}
+    
+    </script>
+</head>
+<body>
+  
+<div class="container">
+    
+    <textarea id="question" placeholder="Question"></textarea>
+    <input type="text" id="choiceA" placeholder="A">
+    <input type="text" id="choiceB" placeholder="B">
+    <input type="text" id="choiceC" placeholder="C">
+    <input type="text" id="choiceD" placeholder="D">
+    <input type="text" id="choiceE" placeholder="E">
+    <input type="text" id="answer" placeholder="Answer">
+    <button onclick="submit()">Submit</button>
+
+
+</div>
+
+</body>
+</html>

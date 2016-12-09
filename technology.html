@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- styling for main page -->
+  <style>
+ body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    background-image: url("ww2tech.jpg");
+    width: 100%;
+    height: 100%;
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.1s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.1s;
+    }
+    
+    .sidenav a:hover,
+    .offcanvas a:focus {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+    
+    .container h1 {
+      color: black;
+    }
+  <!-- end of style for main page -->
+  
+  
+  </style>
+  
+  
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="technology.html">Technology</a>
+    <a href="battles.html">Battles</a>
+    <a href="leaders.html">Important Leaders</a>
+    <a href="quizclone.html">Take quiz</a>
+  </div>
+  
+  <div class="jumbotron">
+    <div id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+  </script>
+<!-- ending style, beginning body html -->  
+  <div>
+  <h1>Technology</h1>
+   <style>
+      h1 {
+        text-align: center;
+      } 
+      p{
+        
+      }
+  </style> -->
+  </div> 
+  <style>
+      p {
+        margin-left: 250px;
+        text-align: center;
+         margin-right: 250px;
+      }
+    </style>
+    <p>
+    World War II changed the technological world that we live in now. Without the war, we would not have
+    much of the technology we have today. From Jet engines to Jerry Cans, the origin of this everyday technology 
+    can all be traced back to World War 2. 
+  </p>
+  <style>
+    padding-top: 50px; 
+    </style>
+  <div>
+    <h2>
+        <center>Aircraft</center>
+    </h2>
+    <p>
+    Aircraft had taken a major leap forward during the war. In fact, we started the war flying biplanes into battle and ended with jet fighters. We often take advantage of the jet engine, not achnolowdging its usefulness. Today, regular passenger jets tavel just belw the speed of sound to get you to your destination. 
+    </p>
+    <style>  
+    text-align:center
+    </style>
+    <center><img src="me-262-2.jpg" alt="Mountain View" style="width:350px;height:228px;"></center>
+    </div>
+  
+  
+  
+</body>
+  
+</html>

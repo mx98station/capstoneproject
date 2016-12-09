@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- styling for main page -->
+  <style>
+ body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    background-image: url("leaders.jpg");
+    background-size:100%;
+    background-position:bottom;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.1s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.1s;
+    }
+    
+    .sidenav a:hover,
+    .offcanvas a:focus {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+    
+    .container h1 {
+      color: black;
+    }
+  <!-- end of style for main page -->
+  
+  
+  </style>
+  
+  
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="technology.html">Technology</a>
+    <a href="battles.html">Battles</a>
+    <a href="leaders.html">Important Leaders</a>
+    <a href="quizclone.html">Take quiz</a>
+  </div>
+  
+  <div class="jumbotron">
+    <div id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+  </script>
+<!-- ending style, beginning body html -->  
+
+<h1>Leaders </h1>
+    
+    <style>
+         h1{
+             text-align: center;
+            }
+    </style>
+    
+<p>
+<b> Harry S. Truman </b>
+<br>
+Harry S. Truman became president of the United States when he succeeded President Franklin D. Roosevelt. Truman played a major roll in the war’s outcome, when he made the executive 
+decision to drop the two atomic bombs on Japan.
+<br><br>
+<b> Joseph Stalin </b>
+<br>
+Joseph Stalin ruled the Soviet Union for more than two decades, instituting a reign of terror. Stalin forced rapid industrialization in the Soviet Union, and the collectivization of 
+  agricultural land, resulting in millions dying from famine, while others were sent to camps. Despite this, his Red Army helped defeat Nazi Germany during WWII.
+<br><br>
+<b> Adolf Hitler </b>
+<br>
+Adolf Hitler was the leader of Germany when World War II began, and led Germany through the war. As leader of the Nazi Party in Germany, he oversaw policies that resulted in the 
+  deaths of millions of people. His policies caused the genocide carried out against Jewish communities, known as the Holocaust. 
+<br><br>
+<b> Benito Mussolini </b>
+<br>
+As prime minister of Italy, Mussolini joined forces with Adolf Hitler, entering the war in 1940, on the side of the Nazis. In 1943, the allies invaded Italy, and in 1945, Mussolini
+ was executed.
+</p>
+    
+    <style>
+      p{
+        text-align: center;
+      }
+    </style>
+  
+  <div>
+    
+  </div>
+  
+  
+  
+  
+  
+  
+</body>
+  
+</html>

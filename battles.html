@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- styling for main page -->
+  <style>
+ body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    background-image: url("Stalingrad2.jpg");
+    background-size:120%;
+    width: 100%;
+    height: 100%;
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.1s;
+      padding-top: 60px;
+    }
+    
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.1s;
+    }
+    
+    .sidenav a:hover,
+    .offcanvas a:focus {
+      color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+    
+    .container h1 {
+      color: black;
+    }
+  <!-- end of style for main page -->
+  
+  
+  </style>
+  
+  
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="technology.html">Technology</a>
+    <a href="battles.html">Battles</a>
+    <a href="leaders.html">Important Leaders</a>
+    <a href="quizclone.html">Take quiz</a>
+  </div>
+  
+  <div class="jumbotron">
+    <div id="main">
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </div>
+
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+      document.body.style.backgroundColor = "white";
+    }
+  </script>
+<!-- ending style, beginning body html -->  
+ <h1>Battles</h1>
+    
+    <style>
+         h1{
+             text-align: center;
+            }
+    </style>
+    
+<p>
+<b> German Invasion of Poland </b>
+<br>
+On September 1, 1939, Germany invaded Poland. The Polish army was defeated within weeks of the invasion. From East Prussia and Germany in the north and Silesia and Slovakia in the south, German units, with more than 2,000 tanks and over 1,000 planes, broke through Polish defenses along the border and advanced on Warsaw in a massive encirclement attack. After heavy shelling and bombing, Warsaw surrendered to the Germans on September 27, 1939. Britain and France, standing by their guarantee of Poland's border, had declared war on Germany on September 3, 1939. 
+The Soviet Union invaded eastern Poland on September 17, 1939. The demarcation line for the partition of German- and Soviet-occupied Poland was along the Bug River.
+<br><br>
+  <b> Operation Barbarossa </b>
+<br>
+On June 22, 1941, Adolf Hitler launched his armies eastward in a massive invasion of the Soviet Union: three great army groups with over three million German soldiers,
+150 divisions, and three thousand tanks smashed across the frontier into Soviet territory. The invasion covered a front from the North Cape to the Black Sea, 
+a distance of two thousa`nd miles. By this point German combat effectiveness had reached its apogee; in training, doctrine, and fighting ability, the forces invading Russia represented the finest army to fight in the twentieth century. Barbarossa was the crucial turning point in World War II, for its failure forced Nazi Germany to fight a two-front war against a coalition possessing immensely superior resources.
+<br><br>
+    <b> Pearl Harbor </b>
+<br>
+  Just before 8 a.m. on December 7, 1941, hundreds of Japanese fighter planes attacked the American naval base at Pearl Harbor near Honolulu, Hawaii. The barrage lasted just two hours, but it was devastating: The Japanese managed to destroy nearly 20 American naval vessels, including eight enormous battleships, and more than 300 airplanes. More than 2,000 Americans soldiers and sailors died in the attack, and another 1,000 were wounded. The day after the assault, President Franklin D. Roosevelt asked Congress to declare war on Japan; Congress approved his declaration with just one dissenting vote. Three days later, 
+  Japanese allies Germany and Italy also declared war on the United States, and again Congress reciprocated. More than two years into the conflict, America had finally joined World War II.
+<br><br>
+  
+   <b> D-Day </b>
+<br>
+  During World War II (1939-1945), the Battle of Normandy, which lasted from June 1944 to August 1944, resulted in the Allied liberation of Western Europe from Nazi Germany’s control. Codenamed Operation Overlord, the battle began on June 6, 1944, also known as D-Day, when some 156,000 American, British and Canadian forces landed on five beaches along a 50-mile stretch of the heavily fortified coast of France’s Normandy region. The invasion was one of the largest amphibious military assaults in history and required extensive planning. Prior to D-Day, the Allies conducted a large-scale deception campaign designed to mislead the Germans about the intended invasion target. By late August 1944, all of northern France had been liberated, 
+  and by the following spring the Allies had defeated the Germans. The Normandy landings have been called the beginning of the end of war in Europe.
+<br><br>
+  
+</body>
+  
+</html>
+
+ 

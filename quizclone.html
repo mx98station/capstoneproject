@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- styling for main page -->
+	<style>
+		.sidenav {
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			background-color: #111;
+			overflow-x: hidden;
+			transition: 0.1s;
+			padding-top: 60px;
+		}
+		
+		.sidenav a {
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 25px;
+			color: #818181;
+			display: block;
+			transition: 0.1s;
+		}
+		
+		.sidenav a:hover,
+		.offcanvas a:focus {
+			color: #f1f1f1;
+		}
+		
+		.sidenav .closebtn {
+			position: absolute;
+			top: 0;
+			right: 25px;
+			font-size: 36px;
+			margin-left: 50px;
+		}
+		
+		#main {
+			transition: margin-left .5s;
+			padding: 16px;
+		}
+		
+		@media screen and (max-height: 450px) {
+			.sidenav {
+				padding-top: 15px;
+			}
+			.sidenav a {
+				font-size: 18px;
+			}
+		}
+		
+		.container h1 {
+			color: black;
+		}
+		
+		<!-- end of style for main page -->
+	</style>
+
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.5.0/firebase.js"></script>
+	<script src="mustache.js"></script>
+	<script id="myTemplate" type="text/template" padding-top:200px>
+		<div class="item">
+			<div class="panel panel-default">
+				<div class="panel-heading">{{data.question}}</div>
+				<div class="panel-body">
+					<div>A) {{data.A}}</div>
+					<div>B) {{data.B}}</div>
+					<div>C) {{data.C}}</div>
+					<div>D) {{data.D}}</div>
+					<input type="text" id="{{questionkey}}" placeholder="Type A, B, C or D" style="text-transform: uppercase;" maxlength="1">
+					<button onclick="checker('{{questionkey}}')">Check Answer</button>
+
+				</div>
+			</div>
+		</div>	
+			
+			</script>
+
+			<script>
+				function checker(key) {
+					console.log(data[key].answer)
+					var x = document.getElementById(key).value;
+					console.log(x);
+					if (x == data[key].answer) {
+						window.alert("correct!");
+					} else {
+						window.alert("Wrong. Sorry.");
+					}
+				}
+				
+			</script>
+
+
+
+
+	
+
+	<div class="jumbotron">
+		<div id="main">
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+		</div>
+		<style>
+			h1 {
+				text-align: center;
+			}
+		</style>
+
+
+		<script>
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+				document.getElementById("main").style.marginLeft = "250px";
+				document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+				document.getElementById("main").style.marginLeft = "0";
+				document.body.style.backgroundColor = "white";
+			}
+		</script>
+
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyBSN4XLbi-1LaM1WKb1PcoNXqhiNo_1YSk",
+				databaseURL: "https://database-742e3.firebaseio.com",
+			};
+			firebase.initializeApp(config);
+
+
+
+			// Get a reference to the database service
+			var database = firebase.database().ref('Questions');
+			var data, build;
+			var myTemplate = $("#myTemplate").html()
+			database.on('value', function(snapshot) {
+				build = "";
+				data = snapshot.val();
+				for (key in data) {
+					build += Mustache.render(myTemplate,{questionkey:key,  data:data[key]});
+				}
+				$("#output").html(build);
+			})
+		</script>
+
+</head>
+
+
+<body>
+
+	<div class="container" id="output">
+
+	</div>
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="index.html">Home</a>
+		<a href="technology.html">Technology</a>
+		<a href="battles.html">Battles</a>
+		<a href="leaders.html">Important Leaders</a>
+		<a href="quizclone.html">Take quiz</a>
+	</div>
+
+
+	<!-- ending style, beginning body html -->
+	<h1>Under Construction</h1>
+
+
+
+
+
+
+
+</body>
+
+</html>
